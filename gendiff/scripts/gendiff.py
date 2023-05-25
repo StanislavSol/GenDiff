@@ -3,9 +3,10 @@ import argparse
 
 
 def get_help():
-    parser = argparse.ArgumentParser(prog='gendiff', description=f'Compress two configuration'
-                                                 f'files and shows a' 
-                                                 f'difference.')
+    parser = argparse.ArgumentParser(prog='gendiff',
+                                     description='Compress two configuration' +
+                                                 'files and shows a' +
+                                                 'difference.')
     parser.add_argument('first_file')
     parser.add_argument('second_file')
     args = parser.parse_args()
