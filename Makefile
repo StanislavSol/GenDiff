@@ -25,6 +25,7 @@ lint:
 test:
 	poetry run pytest
 	
-
+test-cov:
+	poetry run pytest --cov
 
 .PHONY: install test lint selfcheck check build
