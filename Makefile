@@ -16,8 +16,6 @@ package-install:
 package-install-force:
 	python3 -m pip install --user --force-reinstall dist/*.whl
 
-coverage:
-	poetry run pytest --cov=gendiff --cov-report xml tests/
 
 lint:
 	poetry run flake8 gendiff
@@ -25,7 +23,8 @@ lint:
 test:
 	poetry run pytest
 	
-test-cov:
-	poetry run pytest --cov
+
+test-coverage:
+	poetry run pytest --cov=gendiff  --cov-report
 
 .PHONY: install test lint selfcheck check build
