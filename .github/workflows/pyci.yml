@@ -17,14 +17,10 @@ jobs:
         uses: snok/install-poetry@master
       - name: install dependecies
         run: make install
-      - name: install flake8 and pytest
-        run:
-            poetry add --group=dev flake8
-            poetry add -G dev pytest    
       - name: Run linter and pytest
         run: 
           make lint
-          make pytest
+          make test
       - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v3.2.0
         if: github.ref_name == 'main'
