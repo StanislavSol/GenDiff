@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import argparse
-from generators.file_comparison import generate_diff
+from ..file_comparison import generate_diff
 
 
 def get_reference():

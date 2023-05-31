@@ -1,10 +1,9 @@
 from gendiff.file_comparison import generate_diff
-import json
 
 def get_files():
-    path_file1 = 'tests/fixtures/file1.json'
-    path_file2 = 'tests/fixtures/file2.json'
-    path_sample_file = 'tests/fixtures/sample_output.json'
+    path_file1 = 'tests/fixtures/file1.yml'
+    path_file2 = 'tests/fixtures/file2.yml'
+    path_sample_file = 'tests/fixtures/sample_output.yml'
     with open(path_sample_file, 'r', encoding='utf=8') as sample:
         return path_file1, path_file2, sample.read()
 
