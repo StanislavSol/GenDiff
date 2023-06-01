@@ -23,7 +23,7 @@ def get_diff(file1, file2):
 
 
 def generate_diff(file_path1, file_path2):
-    if 'yml' in file_path1 or 'yaml' in file_path1:
+    if file_path1.split('.')[-1] in ('yaml', 'yml'):
         with open(file_path1) as data1, open(file_path2) as data2:
             file1 = yaml.safe_load(data1)
             file2 = yaml.safe_load(data2)
