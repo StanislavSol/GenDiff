@@ -9,4 +9,4 @@
 
 # [Asciinema Generate_diff](https://asciinema.org/a/uZcCFxhrqt4Iox6MgWWxLZEwi)
 
-# [AML](https://asciinema.org/a/gNg2ma6de0z0jDwcfxWssyXdx)
+# [YAML](https://asciinema.org/a/gNg2ma6de0z0jDwcfxWssyXdx)
