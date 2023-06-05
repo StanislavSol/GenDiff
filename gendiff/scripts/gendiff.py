@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import argparse
-from ..file_comparison import generate_diff
+from ..diff import get_decoder_data
+from ..stylish import get_formated_dict
 
 
 def get_reference():
@@ -11,12 +12,10 @@ def get_reference():
     parser.add_argument('first_file')
     parser.add_argument('second_file')
     parser.add_argument('-f', '--format', metavar='FORMAT',
-                        help='set format of output')
+                        default=get_formated_dict, help='set format of output')
     args = parser.parse_args()
-    dictionary_representation = vars(args)
-
-    print(generate_diff(dictionary_representation['first_file'],
-                        dictionary_representation['second_file']))
+    finish_diff = get_decoder_data(args.first_file, args.second_file)
+    print(args.format(finish_diff))
 
 
 def main():
