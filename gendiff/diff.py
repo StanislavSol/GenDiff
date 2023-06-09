@@ -28,18 +28,18 @@ def generate_diff(data1, data2):
         elif key not in data2:
             result[key] = {'type': get_type_value(data1[key]),
                            'diff': 'deleted',
-                           'value': get_value_adjust(data2[key])}
+                           'value': get_value_adjust(data1[key])}
         elif data1[key] == data2[key]:
             result[key] = {'type': get_type_value(data1[key]),
                            'diff': 'unchanged',
-                           'value1': get_value_adjust(data1[key]),
-                           'value2': get_value_adjust(data2[key])}
+                           'value': get_value_adjust(data1[key])}
         elif isinstance(data1[key], dict) and isinstance(data2[key], dict):
-            result[key] = {'type': 'mkdir','diff': 'changed', 'children': generate_diff(value1, value2)}
+            result[key] = {'type': 'mkdir',
+                           'diff': 'changed',
+                           'children': generate_diff(data1[key], data2[key])}
         else:
-            result[key] = {'type': get_type_value(data1[key]),
+            result[key] = {'type': 'mkfile',
                            'diff': 'changed',
                            'value1': get_value_adjust(data1[key]),
                            'value2': get_value_adjust(data2[key])}
     return dict(sorted(result.items()))
-
