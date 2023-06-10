@@ -14,3 +14,5 @@
 # [STYLISH](https://asciinema.org/a/3LCZltQH6RfLnVbC0qk16awGN)
 
 #[PLAIN](https://asciinema.org/a/bVPb5VCLSbWK44w7C39xf958Q)
+
+#[JSON2](https://asciinema.org/a/zAd0lKdjykbJ6MpNfGupra7I7)
