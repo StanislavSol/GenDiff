@@ -6,6 +6,7 @@ from ..formats.stylish import get_stylish
 from ..formats.plain import get_plain
 from ..formats.json import get_json
 
+
 def get_reference():
     parser = argparse.ArgumentParser(prog='gendiff',
                                      description='Compress two configuration' +
