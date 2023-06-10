@@ -2,6 +2,7 @@ from gendiff.parser import get_decoder_data
 from gendiff.diff import generate_diff
 from gendiff.formats.stylish import get_stylish
 from gendiff.formats.plain import get_plain
+from gendiff.formats.json import get_json
 LAST_ELEMENT = -1
 
 
@@ -37,8 +38,16 @@ def get_files_yaml():
         return path_file1, path_file2, sample.read().rstrip()
 
 
+def test_json():
+    parsed_dict = get_decoder_data(*get_files_with_recursion_json()[:LAST_ELEMENT])
+    result_data = generate_diff(*parsed_dict, get_json)
+    print(result_data)
+    sample_file = open('tests/fixtures/check_json.json', 'r').read().rstrip()
+    verification_file = sample_file
+    assert result_data == verification_file
 
-def test_generate_diff():
+
+def test_stylish():
     files_for_test = (
                        get_files_yaml(),
                        get_files_json(),
@@ -52,7 +61,7 @@ def test_generate_diff():
         assert result_data == verification_file
 
 
-def test_flat_diff():
+def test_plain():
     parsed_dict = get_decoder_data(*get_files_with_recursion_json()[:LAST_ELEMENT])
     result_data = generate_diff(*parsed_dict, get_plain)
     sample_file = open('tests/fixtures/sample_file.json', 'r').read().rstrip()
