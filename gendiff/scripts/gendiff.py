@@ -7,7 +7,7 @@ from ..formats.plain import get_plain
 from ..formats.json import get_json
 
 
-def generate_diff(():
+def generate_diff():
     parser = argparse.ArgumentParser(prog='gendiff',
                                      description='Compress two configuration' +
                                                  'files and shows a' +
