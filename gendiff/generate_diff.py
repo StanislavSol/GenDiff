@@ -17,7 +17,7 @@ def get_value_adjust(value):
         return value
 
 
-def get_diff(data1, data2):
+def get_format_diff(data1, data2):
     result = {}
     keys = data1.keys() | data2.keys()
     for key in keys:
@@ -36,7 +36,7 @@ def get_diff(data1, data2):
         elif isinstance(data1[key], dict) and isinstance(data2[key], dict):
             result[key] = {'type': 'mkdir',
                            'diff': 'changed',
-                           'children': get_diff(data1[key], data2[key])}
+                           'children': get_format_diff(data1[key], data2[key])}
         else:
             result[key] = {'type': 'mkfile',
                            'diff': 'changed',
@@ -47,4 +47,4 @@ def get_diff(data1, data2):
 
 
 def get_diff(data1, data2, format_name):
-    return format_name(get_diff(data1, data2))
+    return format_name(get_format_diff(data1, data2))
