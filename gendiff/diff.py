@@ -46,5 +46,5 @@ def get_diff(data1, data2):
     return sorted_data
 
 
-def generate_diff(data1, data2, format_name):
+def get_diff(data1, data2, format_name):
     return format_name(get_diff(data1, data2))

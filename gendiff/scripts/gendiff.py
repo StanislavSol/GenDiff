@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 import argparse
 from ..parser import get_decoder_data
-from ..diff import generate_diff
+from ..diff import gen_diff
 from ..formats.stylish import get_stylish
 from ..formats.plain import get_plain
 from ..formats.json import get_json
 
 
-def get_reference():
+def generate_diff(():
     parser = argparse.ArgumentParser(prog='gendiff',
                                      description='Compress two configuration' +
                                                  'files and shows a' +
@@ -26,7 +26,7 @@ def get_reference():
 
 
 def main():
-    print(get_reference())
+    print(generate_diff())
 
 
 if __name__ == '__main__':
