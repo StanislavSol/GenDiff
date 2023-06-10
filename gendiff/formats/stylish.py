@@ -33,6 +33,7 @@ def get_formated_dict(data):
 
 def get_stylish(value, replacer=' ', spaces_count=NUMBER_OF_INDENTS):
     value = get_formated_dict(value)
+
     def iter_(current_value, depth=STARTING_DEPTH_VALUE):
         if not isinstance(current_value, dict):
             return str(current_value)

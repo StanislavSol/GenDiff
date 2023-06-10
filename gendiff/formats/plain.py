@@ -23,19 +23,23 @@ def get_plain(data):
                 elif value['diff'] == 'deleted':
                     result.append(f'Property \'{".".join(path)}\' was removed')
                 elif value['diff'] == 'added':
-                    result.append(f'Property \'{".".join(path)}\' was added with ' +
-                                  f'value: {get_formatted_value(value["value"])}')
+                    result.append(f'Property \'{".".join(path)}\' was added '
+                                  f'with value: '
+                                  f'{get_formatted_value(value["value"])}')
             elif value['type'] == 'mkfile':
                 path.append(key)
                 if value['diff'] == 'added':
-                    result.append(f'Property \'{".".join(path)}\' was added with ' +
-                                  f'value: {get_formatted_value(value["value"])}')
+                    result.append(f'Property \'{".".join(path)}\' '
+                                  f'was added with '
+                                  f'value: '
+                                  f'{get_formatted_value(value["value"])}')
                 elif value['diff'] == 'deleted':
                     result.append(f'Property \'{".".join(path)}\' was removed')
                 elif value['diff'] == 'changed':
-                    result.append(f'Property \'{".".join(path)}\' was updated. From '+
-                                  f'{get_formatted_value(value["value1"])} to '+
+                    result.append(f'Property \'{".".join(path)}\''
+                                  f' was updated. From '
+                                  f'{get_formatted_value(value["value1"])} to '
                                   f'{get_formatted_value(value["value2"])}')
-            path = path[:LAST_ADDED_ELEM]    
+            path = path[:LAST_ADDED_ELEM]
         return '\n'.join(result)
     return iter_(data)

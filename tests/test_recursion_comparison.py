@@ -47,14 +47,14 @@ def test_generate_diff():
                        )
     for files in files_for_test:
         parsed_dict = get_decoder_data(*files[:LAST_ELEMENT])
-        result_data = generate_diff(*parsed_dict)
+        result_data = generate_diff(*parsed_dict, get_stylish)
         verification_file = files[LAST_ELEMENT]
-        assert get_stylish(result_data) == verification_file
+        assert result_data == verification_file
 
 
 def test_flat_diff():
     parsed_dict = get_decoder_data(*get_files_with_recursion_json()[:LAST_ELEMENT])
-    result_data = generate_diff(*parsed_dict)
+    result_data = generate_diff(*parsed_dict, get_plain)
     sample_file = open('tests/fixtures/sample_file.json', 'r').read().rstrip()
     verification_file = sample_file
-    assert get_plain(result_data) == verification_file
+    assert result_data == verification_file
