@@ -7,8 +7,10 @@
 ### Test Coverage
 <a href="https://codeclimate.com/github/StanislavSol/python-project-49/test_coverage"><img src="https://api.codeclimate.com/v1/badges/94b723f0c356f5452e84/test_coverage" /></a>
 
-# [Asciinema Generate_diff](https://asciinema.org/a/uZcCFxhrqt4Iox6MgWWxLZEwi)
+# [JSON](https://asciinema.org/a/CV49Sn25feHZCN2AXYYmHf2sP)
 
-# [YAML](https://asciinema.org/a/gNg2ma6de0z0jDwcfxWssyXdx)
+# [YAML](https://asciinema.org/a/MFgxrBa0wukhMWyIUD0VnZe75)
 
-#(https://asciinema.org/connect/b4308fa6-14f2-4c67-9821-123aa61f6f22)
+# [STYLISH](https://asciinema.org/a/3LCZltQH6RfLnVbC0qk16awGN)
+
+#[PLAIN](https://asciinema.org/a/bVPb5VCLSbWK44w7C39xf958Q)
