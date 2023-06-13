@@ -43,10 +43,10 @@ def get_stylish(value, replacer=' ', spaces_count=NUMBER_OF_INDENTS):
         lines = []
         for key, val in current_value.items():
             if key[FIRST_CHAR_KEY] in (' ', '+', '-'):
-                lines.append(f'{deep_indent[THIRD_KEY_CHAR:]}{key}: ' +
+                lines.append(f'{deep_indent[THIRD_KEY_CHAR:]}{key}: ',
                              f'{iter_(val, deep_indent_size)}')
             else:
-                lines.append(f'{deep_indent}{key}: ' +
+                lines.append(f'{deep_indent}{key}: ',
                              f'{iter_(val, deep_indent_size)}')
         result = chain('{', lines, [current_indent + '}'])
         return '\n'.join(result)
