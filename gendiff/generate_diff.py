@@ -6,7 +6,7 @@ from .read_file import get_decoder_data
 from .data_parsing import get_format_diff
 
 
-def generate_diff(data1, data2, format_name):
+def generate_diff(data1, data2, format_name='stylish'):
     format_dictionary = {'stylish': get_stylish,
                          'plain': get_plain,
                          'json': get_json}
