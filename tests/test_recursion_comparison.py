@@ -5,8 +5,8 @@ LAST_ELEM = -1
 def get_files_with_recursion_yaml():
     path_file1 = 'tests/fixtures/recursive_data_yml/file1.yaml'
     path_file2 = 'tests/fixtures/recursive_data_yml/file2.yaml'
-    path_sample_file = '''tests/fixtures/recursive_data_yml/
-                         sample_output_recursion.yaml'''
+    path_sample_file = 'tests/fixtures/recursive_data_yml/' \
+                       'sample_output_recursion.yaml'
     with open(path_sample_file, 'r', encoding='utf=8') as sample:
         return path_file1, path_file2, sample.read().rstrip()
 
@@ -14,8 +14,8 @@ def get_files_with_recursion_yaml():
 def get_files_with_recursion_json():
     path_file1 = 'tests/fixtures/recursive_data_json/file1.json'
     path_file2 = 'tests/fixtures/recursive_data_json/file2.json'
-    path_sample_file = '''tests/fixtures/recursive_data_json/
-                          sample_output_recursion.json'''
+    path_sample_file = 'tests/fixtures/recursive_data_json/' \
+                       'sample_output_recursion.json'
     with open(path_sample_file, 'r', encoding='utf=8') as sample:
         return path_file1, path_file2, sample.read().rstrip()
 
