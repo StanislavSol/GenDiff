@@ -37,8 +37,7 @@ def get_files_yaml():
 
 
 def test_json():
-    result_data = generate_diff(
-                                *get_files_with_recursion_json()[:LAST_ELEM],
+    result_data = generate_diff(*get_files_with_recursion_json()[:LAST_ELEM],
                                 'json')
     sample_file = open('tests/fixtures/check_json.json', 'r').read().rstrip()
     verification_file = sample_file
