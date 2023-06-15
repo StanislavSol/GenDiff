@@ -2,7 +2,7 @@ from gendiff import generate_diff
 LAST_ELEM = -1
 
 
-def get_files_with_recursion_yaml():
+def get_recursion_yaml():
     path_file1 = 'tests/fixtures/recursive_data_yml/file1.yaml'
     path_file2 = 'tests/fixtures/recursive_data_yml/file2.yaml'
     path_sample_file = 'tests/fixtures/recursive_data_yml/' \
@@ -11,7 +11,7 @@ def get_files_with_recursion_yaml():
         return path_file1, path_file2, sample.read().rstrip()
 
 
-def get_files_with_recursion_json():
+def get_recursion_json():
     path_file1 = 'tests/fixtures/recursive_data_json/file1.json'
     path_file2 = 'tests/fixtures/recursive_data_json/file2.json'
     path_sample_file = 'tests/fixtures/recursive_data_json/' \
@@ -37,9 +37,7 @@ def get_files_yaml():
 
 
 def test_json():
-    result_data = generate_diff(
-                                *get_files_with_recursion_json()[:LAST_ELEM],
-                                'json')
+    result_data = generate_diff(*get_recursion_json()[:LAST_ELEM], 'json')
     sample_file = open('tests/fixtures/check_json.json', 'r').read().rstrip()
     verification_file = sample_file
     assert result_data == verification_file
@@ -48,8 +46,8 @@ def test_json():
 def test_stylish():
     files_for_test = (get_files_yaml(),
                       get_files_json(),
-                      get_files_with_recursion_json(),
-                      get_files_with_recursion_yaml())
+                      get_recursion_json(),
+                      get_recursion_yaml())
 
     for files in files_for_test:
         result_data = generate_diff(*files[:LAST_ELEM], 'stylish')
@@ -58,9 +56,7 @@ def test_stylish():
 
 
 def test_plain():
-    result_data = generate_diff(
-                                *get_files_with_recursion_json()[:LAST_ELEM],
-                                'plain')
+    result_data = generate_diff(*get_recursion_json()[:LAST_ELEM], 'plain')
     sample_file = open('tests/fixtures/sample_file.json', 'r').read().rstrip()
     verification_file = sample_file
     assert result_data == verification_file
