@@ -58,7 +58,8 @@ def test_stylish():
 
 
 def test_plain():
-    result_data = generate_diff(*get_files_with_recursion_json()[:LAST_ELEM],
+    result_data = generate_diff(
+                                *get_files_with_recursion_json()[:LAST_ELEM],
                                 'plain')
     sample_file = open('tests/fixtures/sample_file.json', 'r').read().rstrip()
     verification_file = sample_file
