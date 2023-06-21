@@ -14,13 +14,11 @@ def get_pars_args():
                         choices=['stylish', 'plain', 'json'])
 
     args = parser.parse_args()
-    return generate_diff(args.first_file,
-                         args.second_file,
-                         args.format)
+    return args.first_file, args.second_file, args.format
 
 
 def main():
-    print(get_pars_args())
+    print(generate_diff(*get_pars_args()))
 
 
 if __name__ == '__main__':

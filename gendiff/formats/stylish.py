@@ -7,6 +7,15 @@ STARTING_DEPTH_VALUE = 0
 THIRD_KEY_CHAR = 2
 
 
+def get_correct_view(data_tree):
+    replacement_values = (('True', 'true'),
+                          ('False', 'false'),
+                          ('None', 'null'))
+    for values in replacement_values:
+        data_tree = data_tree.replace(*values)
+    return data_tree
+
+
 def get_formated_dict(data):
     result = {}
     for key, value in data.items():
@@ -46,4 +55,4 @@ def get_stylish(data):
                              f'{iter_(val, deep_indent_size)}')
         result = chain('{', lines, [current_indent + '}'])
         return '\n'.join(result)
-    return iter_(formated_data)
+    return get_correct_view(iter_(formated_data))
