@@ -19,11 +19,11 @@ def get_formatted_value(value):
         return f'\'{value}\''
 
 
-def get_plain(current_value, path=[], result=[]):
+def get_formatting_view(current_value, path=None, result=None):
     for key, value in current_value.items():
         path.append(key)
         if value['diff'] == 'nested':
-            get_plain(value['children'], path)
+            get_formatting_view(value['children'], path, result)
             path = path[:LAST_ADDED_ELEM]
         elif value['diff'] == 'deleted':
             result.append(f'Property \'{".".join(path)}\' was removed')
@@ -37,4 +37,9 @@ def get_plain(current_value, path=[], result=[]):
                           f'{get_formatted_value(value["value1"])} to '
                           f'{get_formatted_value(value["value2"])}')
         path = path[:LAST_ADDED_ELEM]
+    return result
+
+
+def get_plain(data):
+    result = get_formatting_view(data, path=[], result=[])
     return get_correct_view('\n'.join(result))
