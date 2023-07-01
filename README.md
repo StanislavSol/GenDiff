@@ -5,7 +5,21 @@
 <a href="https://codeclimate.com/github/StanislavSol/python-project-50/maintainability"><img src="https://api.codeclimate.com/v1/badges/6b8225df7966a971d539/maintainability" /></a>
 
 ### Test Coverage
-<a href="https://codeclimate.com/github/StanislavSol/python-project-49/test_coverage"><img src="https://api.codeclimate.com/v1/badges/94b723f0c356f5452e84/test_coverage" /></a>
+<a href="https://codeclimate.com/github/StanislavSol/python-project-50/test_coverage"><img src="https://api.codeclimate.com/v1/badges/95400171a521fb5db8ad470d41a403e998de607a84b6e647c692327fb6bc44a2/test_coverage" /></a>
+
+### The program finds the difference between flat and nested trees of YML and JSON files
+### Сommand output "gendiff --help":
+
+#### Compress two configuration files and shows a difference.
+
+#### positional arguments:
+####   first_file
+####   second_file
+
+#### options:
+####  -h, --help            show this help message and exit
+####  -f FORMAT, --format FORMAT
+####                        set format of output
 
 # [FLAT_DATA](https://asciinema.org/a/CV49Sn25feHZCN2AXYYmHf2sP)
 

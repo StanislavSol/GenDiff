@@ -3,7 +3,7 @@ import argparse
 from gendiff import generate_diff
 
 
-def get_pars_args():
+def get_args():
     parser = argparse.ArgumentParser(description='''
     Compress two configuration files and shows a difference.''')
 
@@ -12,13 +12,12 @@ def get_pars_args():
     parser.add_argument('-f', '--format', metavar='FORMAT',
                         default='stylish', help='set format of output',
                         choices=['stylish', 'plain', 'json'])
-
-    args = parser.parse_args()
-    return args.first_file, args.second_file, args.format
+    return parser.parse_args()
 
 
 def main():
-    print(generate_diff(*get_pars_args()))
+    args = get_args() 
+    print(generate_diff(args.first_file, args.second_file, args.format))
 
 
 if __name__ == '__main__':
