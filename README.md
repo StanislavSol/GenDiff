@@ -10,16 +10,16 @@
 ### The program finds the difference between flat and nested trees of YML and JSON files
 ### Сommand output "gendiff --help":
 
-#### Compress two configuration files and shows a difference.
+Compress two configuration files and shows a difference.
 
-#### positional arguments:
-####   first_file
-####   second_file
+positional arguments:
+   first_file
+   second_file
 
-#### options:
-####  -h, --help            show this help message and exit
-####  -f FORMAT, --format FORMAT
-####                        set format of output
+options:
+  -h, --help            show this help message and exit
+  -f FORMAT, --format FORMAT
+                        set format of output
 
 # [FLAT_DATA](https://asciinema.org/a/CV49Sn25feHZCN2AXYYmHf2sP)
 
