@@ -5,7 +5,7 @@
 <a href="https://codeclimate.com/github/StanislavSol/python-project-50/maintainability"><img src="https://api.codeclimate.com/v1/badges/6b8225df7966a971d539/maintainability" /></a>
 
 ### Test Coverage
-</a>a href="https://codeclimate.com/github/StanislavSol/python-project-50/test_coverage"><img src="https://api.codeclimate.com/v1/badges/95400171a521fb5db8ad470d41a403e998de607a84b6e647c692327fb6bc44a2/test_coverage" /></a>
+<img src="https://api.codeclimate.com/v1/badges/6b8225df7966a971d539/test_coverage" /></a>
 
 ### The program finds the difference between flat and nested trees of YML and JSON files
 ### Сommand output "gendiff --help":
