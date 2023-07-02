@@ -17,9 +17,9 @@ first_file,
 second_file
 
 options:
--h, --help >show this help message and exit
+-h, --help show this help message and exit
 -f FORMAT, --format FORMAT
-                     >set format of output
+                     set format of output
 
 # [FLAT_DATA](https://asciinema.org/a/CV49Sn25feHZCN2AXYYmHf2sP)
 
