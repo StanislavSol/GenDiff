@@ -13,13 +13,13 @@
 Compress two configuration files and shows a difference.
 
 positional arguments:
-   first_file
-   second_file
+first_file
+second_file
 
 options:
-  -h, --help            show this help message and exit
-  -f FORMAT, --format FORMAT
-                        set format of output
+-h, --help            show this help message and exit
+-f FORMAT, --format FORMAT
+                      set format of output
 
 # [FLAT_DATA](https://asciinema.org/a/CV49Sn25feHZCN2AXYYmHf2sP)
 

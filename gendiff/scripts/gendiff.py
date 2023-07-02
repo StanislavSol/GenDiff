@@ -16,7 +16,7 @@ def get_args():
 
 
 def main():
-    args = get_args() 
+    args = get_args()
     print(generate_diff(args.first_file, args.second_file, args.format))
 
 
