@@ -7,7 +7,9 @@
 ### Test Coverage
 <a href="https://codeclimate.com/github/StanislavSol/python-project-50/test_coverage"><img src="https://api.codeclimate.com/v1/badges/6b8225df7966a971d539/test_coverage" /></a>
 
-### The program finds the difference between flat and nested trees of YML and JSON files
+### Instruсtion:
+The program finds the difference between flat and nested trees of YML and JSON files
+
 ### Сommand output "gendiff --help":
 
 Compress two configuration files and shows a difference.
@@ -31,10 +33,11 @@ options:
 
 # [JSON](https://asciinema.org/a/zAd0lKdjykbJ6MpNfGupra7I7)
 
-Installation:
-Clone the repository to your system -
-git clone https://github.com/StanislavSol/python-project-50.git
-In the terminal, enter the command -
-make build
-make publish
-make package-install
+### Installation:
+1. Clone the repository to your system -
+  * git clone https://github.com/StanislavSol/python-project-50.git
+2. In the terminal, enter the command -
+  * make build
+  * make publish
+  * make package-install
+
