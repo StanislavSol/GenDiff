@@ -1,15 +1,13 @@
 def get_formatted_value(value):
-    if isinstance(value, dict):
-        return '[complex value]'
-    elif isinstance(value, bool):
-        value = str(value).lower()
-        return value
-    elif isinstance(value, int):
-        return value
-    elif isinstance(value, str):
-        return f'\'{value}\''
-    elif value is None:
-        return 'null'
+    elem_types = {"<class 'NoneType'>": 'null',
+                  "<class 'bool'>": str(value).lower(),
+                  "<class 'str'>": f'\'{value}\'',
+                  "<class 'int'>": value,
+                  "<class 'dict'>": '[complex value]'}
+    type_value = str(type(value))
+    if type_value in elem_types:
+        return elem_types[type_value]
+    return value
 
 
 def get_formatting_view(current_value, path=None, result=None):

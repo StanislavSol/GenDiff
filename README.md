@@ -30,3 +30,11 @@ options:
 # [PLAIN](https://asciinema.org/a/bVPb5VCLSbWK44w7C39xf958Q)
 
 # [JSON](https://asciinema.org/a/zAd0lKdjykbJ6MpNfGupra7I7)
+
+Installation:
+Clone the repository to your system -
+git clone https://github.com/StanislavSol/python-project-50.git
+In the terminal, enter the command -
+make build
+make publish
+make package-install
