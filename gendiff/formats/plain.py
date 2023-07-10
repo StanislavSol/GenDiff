@@ -1,6 +1,4 @@
 def get_formatted_value(value):
-
-
     elem_types = {type(None): 'null',
                   type(True): str(value).lower(),
                   type(''): f'\'{value}\'',
