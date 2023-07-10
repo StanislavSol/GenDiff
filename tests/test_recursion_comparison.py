@@ -1,6 +1,5 @@
 from gendiff import generate_diff
 import pytest
-LAST_ELEM = -1
 
 
 @pytest.mark.parametrize('path1, path2, formatter, expected', [

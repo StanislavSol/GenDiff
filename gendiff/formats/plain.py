@@ -1,10 +1,11 @@
 def get_formatted_value(value):
-    elem_types = {"<class 'NoneType'>": 'null',
-                  "<class 'bool'>": str(value).lower(),
-                  "<class 'str'>": f'\'{value}\'',
-                  "<class 'int'>": value,
-                  "<class 'dict'>": '[complex value]'}
-    type_value = str(type(value))
+    elem_types = {type(None): 'null',
+                  type(bool): str(value).lower(),
+                  type(''): f'\'{value}\'',
+                  type(0): value,
+                  type({}): '[complex value]'}
+
+    type_value = type(value)
     if type_value in elem_types:
         return elem_types[type_value]
     return value
