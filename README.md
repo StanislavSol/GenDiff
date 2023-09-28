@@ -5,8 +5,39 @@
 <a href="https://codeclimate.com/github/StanislavSol/python-project-50/maintainability"><img src="https://api.codeclimate.com/v1/badges/6b8225df7966a971d539/maintainability" /></a>
 
 ### Test Coverage
-<a href="https://codeclimate.com/github/StanislavSol/python-project-49/test_coverage"><img src="https://api.codeclimate.com/v1/badges/94b723f0c356f5452e84/test_coverage" /></a>
+<a href="https://codeclimate.com/github/StanislavSol/python-project-50/test_coverage"><img src="https://api.codeclimate.com/v1/badges/6b8225df7966a971d539/test_coverage" /></a>
 
-# [Asciinema Generate_diff](https://asciinema.org/a/uZcCFxhrqt4Iox6MgWWxLZEwi)
+### Instruсtion:
+The program finds the difference between flat and nested trees of YML and JSON files
 
-# [YAML](https://asciinema.org/a/gNg2ma6de0z0jDwcfxWssyXdx)
+### Сommand output "gendiff --help":
+
+Compress two configuration files and shows a difference.
+
+positional arguments:
+first_file,
+second_file
+
+options:
+-h, --help show this help message and exit
+-f FORMAT, --format FORMAT
+                     set format of output
+
+# [FLAT_DATA](https://asciinema.org/a/CV49Sn25feHZCN2AXYYmHf2sP)
+
+# [YAML](https://asciinema.org/a/MFgxrBa0wukhMWyIUD0VnZe75)
+
+# [STYLISH](https://asciinema.org/a/3LCZltQH6RfLnVbC0qk16awGN)
+
+# [PLAIN](https://asciinema.org/a/bVPb5VCLSbWK44w7C39xf958Q)
+
+# [JSON](https://asciinema.org/a/zAd0lKdjykbJ6MpNfGupra7I7)
+
+### Installation:
+1. Clone the repository to your system -
+  * git clone https://github.com/StanislavSol/python-project-50.git
+2. In the terminal, enter the command -
+  * make build
+  * make publish
+  * make package-install
+

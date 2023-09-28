@@ -1,15 +1,16 @@
 [tool.poetry]
 name = "hexlet-code"
 version = "0.1.0"
-description = ""
+description = "The program calculates the differences between two files in the specified format."
 authors = ["StanislavSol <vandemar@bk.ru>"]
 readme = "README.md"
 packages = [{include = "gendiff"}]
+repository = "https://github.com/StanislavSol/python-project-50.git"
+classifiers = ["Programming Language :: Python :: 3.10"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-pytest-cov = "^4.1.0"
-pyyml = "^0.0.2"
+pyyaml = "^6.0"
 
 [tool.poetry.scripts]
 gendiff = "gendiff.scripts.gendiff:main"
@@ -17,6 +18,7 @@ gendiff = "gendiff.scripts.gendiff:main"
 [tool.poetry.group.dev.dependencies]
 flake8 = "^6.0.0"
 pytest = "^7.3.1"
+pytest-cov = "^4.1.0"
 
 [build-system]
 requires = ["poetry-core"]

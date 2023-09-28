@@ -1,46 +1,21 @@
-from gendiff.file_comparison import generate_diff
+from gendiff import generate_diff
+import pytest
 
 
-def get_files_with_recursion_yaml():
-    path_file1 = 'tests/fixtures/recursive_data_yml/file1.yaml'
-    path_file2 = 'tests/fixtures/recursive_data_yml/file2.yaml'
-    path_sample_file = 'tests/fixtures/recursive_data_yml/sample_output_recursion.yaml'
-    with open(path_sample_file, 'r', encoding='utf=8') as sample:
-        return path_file1, path_file2, sample.read()
-
-
-def get_files_with_recursion_json():
-    path_file1 = 'tests/fixtures/recursive_data_json/file_recursive1.json'
-    path_file2 = 'tests/fixtures/recursive_data_json/file_recursive2.json'
-    path_sample_file = 'tests/fixtures/recursive_data_json/sample_output_recursion.json'
-    with open(path_sample_file, 'r', encoding='utf=8') as sample:
-        return path_file1, path_file2, sample.read()
-
-
-def get_files_json():
-    path_file1 = 'tests/fixtures/flat_data_json/file1.json'
-    path_file2 = 'tests/fixtures/flat_data_json/file2.json'
-    path_sample_file = 'tests/fixtures/flat_data_json/sample_output.json'
-    with open(path_sample_file, 'r', encoding='utf=8') as sample:
-        return path_file1, path_file2, sample.read()
-
-
-def get_files_yaml():
-    path_file1 = 'tests/fixtures/flat_data_yml/file1.yml'
-    path_file2 = 'tests/fixtures/flat_data_yml/file2.yml'
-    path_sample_file = 'tests/fixtures/flat_data_yml/sample_output.yml'
-    with open(path_sample_file, 'r', encoding='utf=8') as sample:
-        return path_file1, path_file2, sample.read()
-
-
-def test_generate_diff():
-    file_yaml1, file_yaml2, result_file_yaml = get_files_with_recursion_yaml()
-    file_json1, file_json2, result_file_json = get_files_with_recursion_json()
-    file_rec_json1, file_rec_json2, result_file_rec_json = get_files_json()
-    file_rec_yml1, file_rec_yml2, result_file_rec_yml = get_files_yaml()
-    assert generate_diff(file_yaml1, file_yaml2) == result_file_yaml
-    assert generate_diff(file_json1, file_json2) == result_file_json
-    assert generate_diff(file_rec_json1, file_rec_json2) == result_file_rec_json
-    assert generate_diff(file_rec_yml1, file_rec_yml2) == result_file_rec_yml
-
-
+@pytest.mark.parametrize('path1, path2, formatter, expected', [
+    ('tests/fixtures/flat_file1.json',
+     'tests/fixtures/flat_file2.json', 'stylish',
+     'tests/fixtures/result_flat_file.txt'),
+    ('tests/fixtures/recursion_file1.json',
+     'tests/fixtures/recursion_file2.yaml', 'stylish',
+     'tests/fixtures/recursion_result.txt'),
+    ('tests/fixtures/recursion_file1.json',
+     'tests/fixtures/recursion_file2.yaml', 'plain',
+     'tests/fixtures/plain_result.txt'),
+    ('tests/fixtures/recursion_file1.json',
+     'tests/fixtures/recursion_file2.yaml', 'json',
+     'tests/fixtures/result_json_format.txt')])
+def test_generat_diff(path1, path2, formatter, expected):
+    with open(expected, 'r') as file:
+        res = file.read().strip()
+    assert generate_diff(path1, path2, formatter) == res

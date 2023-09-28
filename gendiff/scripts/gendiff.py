@@ -1,26 +1,23 @@
 #!/usr/bin/env python3
 import argparse
-from ..file_comparison import generate_diff
+from gendiff import generate_diff
 
 
-def get_reference():
-    parser = argparse.ArgumentParser(prog='gendiff',
-                                     description='Compress two configuration' +
-                                                 'files and shows a' +
-                                                 'difference.')
+def get_args():
+    parser = argparse.ArgumentParser(description='''
+    Compress two configuration files and shows a difference.''')
+
     parser.add_argument('first_file')
     parser.add_argument('second_file')
     parser.add_argument('-f', '--format', metavar='FORMAT',
-                        help='set format of output')
-    args = parser.parse_args()
-    dictionary_representation = vars(args)
-
-    print(generate_diff(dictionary_representation['first_file'],
-                        dictionary_representation['second_file']))
+                        default='stylish', help='set format of output',
+                        choices=['stylish', 'plain', 'json'])
+    return parser.parse_args()
 
 
 def main():
-    get_reference()
+    args = get_args()
+    print(generate_diff(args.first_file, args.second_file, args.format))
 
 
 if __name__ == '__main__':
